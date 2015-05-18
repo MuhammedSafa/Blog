@@ -1,4 +1,11 @@
-﻿@model IEnumerable<BlogWithMvc5.Models.Article>
+﻿@*@model IEnumerable<BlogWithMvc5.Models.Article>*@
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<BlogWithMvc5.Models.Article>
+
+@{
+    ViewBag.Title = "Visitor";
+}
 
 <h2>Guest</h2>
 
@@ -6,19 +13,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Subject)
+            Subject
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Author)
+            Author
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Content)
+            Content
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Picture)
+            Picture
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date)
+            Release Date
         </th>
         <th></th>
     </tr>
@@ -45,3 +52,7 @@
     }
 
 </table>
+
+<div class="pagedList">
+    @Html.PagedListPager(Model, pageNumber => Url.Action("Pagination", new { pageNumber }), PagedListRenderOptions.TwitterBootstrapPagerAligned)
+</div>

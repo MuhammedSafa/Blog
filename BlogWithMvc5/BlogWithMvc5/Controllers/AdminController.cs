@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using BlogWithMvc5.Models;
 using System.IO;
+using PagedList;
+using PagedList.Mvc;
 
 namespace BlogWithMvc5.Controllers
 {
@@ -16,9 +18,15 @@ namespace BlogWithMvc5.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin
+        // GET: Visitor
         public ActionResult Index()
         {
-            return View(db.Articles.ToList());
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Index(int pageNumber = 1)
+        {
+            return View(db.Articles.OrderBy(x => x.date).ToList().ToPagedList(pageNumber, 10));
         }
 
         // GET: Admin/Details/5
@@ -29,7 +37,7 @@ namespace BlogWithMvc5.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Article article = db.Articles.Find(id);
-            ViewBag.Title = article.Subject;
+            ViewBag.Message = article.Subject;
             if (article == null)
             {
                 return HttpNotFound();
@@ -50,7 +58,7 @@ namespace BlogWithMvc5.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Subject,Author,Content,Picture,date")] Article article, HttpPostedFileBase photo)
         {
-
+            //add picture
             if (photo != null && photo.ContentLength > 0)
             {
 

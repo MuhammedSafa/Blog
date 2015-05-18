@@ -1,6 +1,10 @@
 ﻿@model BlogWithMvc5.Models.Article
 
-<h2>@ViewBag.Title</h2>
+@{
+    ViewBag.Title = "Details - " + ViewBag.Message;
+
+}
+<h2>@ViewBag.Message</h2>
 
 <div>
     <h4>Article</h4>
