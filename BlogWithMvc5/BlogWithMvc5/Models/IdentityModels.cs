@@ -29,5 +29,7 @@ namespace BlogWithMvc5.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<BlogWithMvc5.Models.Article> Articles { get; set; }
     }
 }
