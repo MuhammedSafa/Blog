@@ -53,3 +53,7 @@ C:\Users\MSB\Documents\GitHub\Blog\BlogWithMvc5\BlogWithMvc5\bin\Microsoft.Owin.
 C:\Users\MSB\Documents\GitHub\Blog\BlogWithMvc5\BlogWithMvc5\obj\Debug\BlogWithMvc5.csprojResolveAssemblyReference.cache
 C:\Users\MSB\Documents\GitHub\Blog\BlogWithMvc5\BlogWithMvc5\obj\Debug\BlogWithMvc5.dll
 C:\Users\MSB\Documents\GitHub\Blog\BlogWithMvc5\BlogWithMvc5\obj\Debug\BlogWithMvc5.pdb
+C:\Users\MSB\Documents\GitHub\Blog\BlogWithMvc5\BlogWithMvc5\bin\PagedList.dll
+C:\Users\MSB\Documents\GitHub\Blog\BlogWithMvc5\BlogWithMvc5\bin\PagedList.Mvc.dll
+C:\Users\MSB\Documents\GitHub\Blog\BlogWithMvc5\BlogWithMvc5\bin\PagedList.xml
+C:\Users\MSB\Documents\GitHub\Blog\BlogWithMvc5\BlogWithMvc5\bin\PagedList.Mvc.xml
