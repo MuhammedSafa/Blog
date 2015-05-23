@@ -41,6 +41,15 @@ namespace BlogWithMvc5.Controllers
             {
                 return HttpNotFound();
             }
+
+            //var olan commentleri çektik articleId ye göre
+            var comments = (from k in db.Comments
+                            where k.ArticleID == id
+                            select k.makedComment);
+
+            ViewBag.articleComment = comments;
+
+
             return View(article);
         }
 
@@ -53,5 +62,29 @@ namespace BlogWithMvc5.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        [HttpPost]
+        public string CommentsAdd(Comment comment)
+        {
+            if (!String.IsNullOrEmpty(comment.makedComment) && !String.IsNullOrEmpty(comment.ArticleID.ToString()))
+            {
+
+                comment.ArticleID = comment.ArticleID;
+                comment.makedComment = comment.makedComment;
+
+                db.Comments.Add(comment);
+                db.SaveChanges();
+
+
+                //TODO: Save the data in database
+                return "Thank you " + comment.makedComment + ". Record Saved.";
+            }
+            else
+                return "Please complete the form.";
+
+        }
+
+
     }
 }

@@ -249,6 +249,8 @@
     <Content Include="Views\Visitor\Details.cshtml" />
     <Content Include="Views\Visitor\Edit.cshtml" />
     <Content Include="Views\Visitor\Index.cshtml" />
+    <Content Include="Views\Shared\_CommentView.cshtml" />
+    <Content Include="Views\Shared\_CommentShowView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

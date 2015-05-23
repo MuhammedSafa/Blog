@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.articleComment = ViewData["comments"];
+    ViewBag.Comment = "Comment : ";
+}
+
+
+
+@foreach (var item in ViewBag.articleComment)
+{
+    @ViewBag.Comment @item
+    <br />
+}

@@ -1,0 +1,32 @@
+﻿@{
+
+    var id = ViewData["id"];
+}
+
+<div class="jumbotron">
+    <h2>Comment</h2>
+
+    <form id="formOfComment" action="/Visitor/CommentsAdd" method="post">
+        <p>
+            Enter your comment
+           
+            @* commenti almak için *@
+            @Html.TextBox("comment.makedComment")
+
+           
+            @* Article Id almak için *@
+            @Html.TextBox("comment.ArticleID", "" + @id, new { @style = "display:none" })
+
+
+            <a href='@Url.Action("Details", "Visitor", new { id = id })'><input type="button" value="Save" id="Save" /></a>
+
+            <span id="msg" style="color:red;" />
+
+        </p>
+    </form>
+
+
+
+</div>
+
+

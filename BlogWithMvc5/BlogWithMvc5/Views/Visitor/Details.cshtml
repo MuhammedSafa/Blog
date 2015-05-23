@@ -53,6 +53,27 @@
     </dl>
 </div>
 
+@Html.Partial("_CommentView", new ViewDataDictionary { { "id", @Model.Id } })
+
+
+@Html.Partial("_CommentShowView", new ViewDataDictionary { { "comments", ViewBag.articleComment } })
+
+
 <p>
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
+@section Scripts{
+    <script type="text/javascript">
+        $('#Save').click(function () {
+
+            var form = $("#formOfComment");
+            var url = form.attr("action");
+            var formData = form.serialize();
+            $.post(url, formData, function (data) {
+                $("#msg").html(data);
+            });
+        })
+    </script>
+}

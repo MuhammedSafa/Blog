@@ -31,5 +31,7 @@ namespace BlogWithMvc5.Models
         }
 
         public System.Data.Entity.DbSet<BlogWithMvc5.Models.Article> Articles { get; set; }
+
+        public System.Data.Entity.DbSet<BlogWithMvc5.Models.Comment> Comments { get; set; }
     }
 }
