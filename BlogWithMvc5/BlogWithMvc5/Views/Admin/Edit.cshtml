@@ -48,8 +48,9 @@
 
                 <input type="file" name="photo" id="photo" style="width:100%" />
 
-                @*@Html.EditorFor(model => model.Picture, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })*@
+                @Html.HiddenFor(model => model.Picture, new { htmlAttributes = new { @class = "form-control" } })
+                
+                @*@Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
