@@ -60,7 +60,7 @@
 </table>
 
 <div class="pagedList">
-    @Html.PagedListPager(Model, pageNumber => Url.Action("Pagination", new { pageNumber }), PagedListRenderOptions.TwitterBootstrapPagerAligned)
+    @Html.PagedListPager(Model, pageNumber => Url.Action("Index", new { pageNumber }), PagedListRenderOptions.TwitterBootstrapPagerAligned)
 </div>
 
 
